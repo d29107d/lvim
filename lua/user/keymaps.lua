@@ -75,6 +75,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "<S-m>", ":Vista!!<cr>", opts)
 
+vim.keymap.set({'x', 'o', 'n'}, 'z', '<Plug>(leap-forward-to)')
+vim.keymap.set({'x', 'o', 'n'}, 'Z', '<Plug>(leap-backward-to)')
+
 function vim.getVisualSelection()
 	vim.cmd('noau normal! "vy"')
 	local text = vim.fn.getreg('v')
